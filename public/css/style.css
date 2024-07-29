@@ -1,0 +1,23 @@
+h2 {
+	font-size: 30px;
+	font-weight: 600;
+}
+
+textarea {
+	resize: none;
+}
+
+nav {
+	min-height: 5vh;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
+.content {
+    display: flex;
+    justify-content: center;
+    min-height: 95vh;
+}
