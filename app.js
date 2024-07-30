@@ -38,7 +38,7 @@ app.get('/', (req, res) => {
 });
 
 app.get('/new', (req, res) => {
-    res.render('form');
+    res.render('form', {links: links});
 });
 app.post('/new', (req, res) => {
     messages.push(req.body);
