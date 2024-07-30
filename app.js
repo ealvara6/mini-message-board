@@ -2,17 +2,18 @@ const express = require('express');
 const app = express();
 const path = require('path');
 const assetpath = path.join(__dirname, 'public');
+const date = new Date();
 
 const messages = [
     {
         message: 'Hi there!',
         user: 'Amando',
-        added: new Date()
+        added: date.toLocaleDateString('en-US')
     },
     {
         message: 'Hello World!',
         user: 'Charles',
-        added: new Date()
+        added: date.toLocaleDateString('en-US')
     }
 ];
 

@@ -4,26 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
-    <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" href="./css/index.css">
+    <!-- <link rel="stylesheet" href="./css/style.css"> -->
+    <!-- <link rel="stylesheet" href="./css/index.css"> -->
     <link rel="stylesheet" href="./css/output.css">
 </head>
 <body>
-    <div class="container">
+    <div class="flex flex-col min-h-screen">
         <%- include('navbar') %>
-        <h1 class="text-3xl font-bold underline">
-            Hello world!
-          </h1>
-        <div class="content">
-            <ul class="posts">
-                <% messages.map((message) => { %>
-                    <li class="post">
-                        <div class="info"><span class="info-desc">Message: </span> <%= message.message %><br></div>
-                        <div class="info"><span class="info-desc">User: </span> <%= message.user %><br></div>
-                        <div class="info"><span class="info-desc">Date Added: </span><%= message.added %><br></div>
-                    </li>
-                <% }) %>
-            </ul>
+        <div class="flex flex-col self-center max-w-fit grow">
+            <div class="border-sold border-black rounded-lg border-2 p-3 flex flex-col gap-3 min-w-[600px]">
+                <div class="self-center font-bold font-extrabold font text-4xl">posts</div>
+                <ul class="flex flex-col gap-5 max-w-full ">
+                    <% messages.map((message) => { %>
+                        <li class="p-2 border-2 border-black border-solid rounded-lg">
+                            <div><span class="font-bold text-lg">User: </span> <%= message.user %><br></div>
+                            <div><span class="font-bold text-lg">Message: </span> <%= message.message %><br></div>
+                            <div><span class="font-bold text-lg">Date Added: </span><%= message.added %><br></div>
+                        </li>
+                    <% }) %>
+                </ul>
+                <button class="bg-sky-600 w-fit p-2 text-white font-bold rounded-lg self-end hover:bg-sky-400">Add new post</button>
+            </div>
         </div>
     </div>
 </body>

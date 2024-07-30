@@ -554,73 +554,110 @@ video {
   --tw-contain-style:  ;
 }
 
-.container {
-  width: 100%;
+.flex {
+  display: flex;
 }
 
-@media (min-width: 640px) {
-  .container {
-    max-width: 640px;
-  }
+.min-h-screen {
+  min-height: 100vh;
 }
 
-@media (min-width: 768px) {
-  .container {
-    max-width: 768px;
-  }
+.w-fit {
+  width: -moz-fit-content;
+  width: fit-content;
 }
 
-@media (min-width: 1024px) {
-  .container {
-    max-width: 1024px;
-  }
+.min-w-\[600px\] {
+  min-width: 600px;
 }
 
-@media (min-width: 1280px) {
-  .container {
-    max-width: 1280px;
-  }
+.max-w-fit {
+  max-width: -moz-fit-content;
+  max-width: fit-content;
 }
 
-@media (min-width: 1536px) {
-  .container {
-    max-width: 1536px;
-  }
+.max-w-full {
+  max-width: 100%;
 }
 
-.text-3xl {
-  font-size: 1.875rem;
-  line-height: 2.25rem;
+.grow {
+  flex-grow: 1;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.gap-3 {
+  gap: 0.75rem;
+}
+
+.gap-5 {
+  gap: 1.25rem;
+}
+
+.self-end {
+  align-self: flex-end;
+}
+
+.self-center {
+  align-self: center;
+}
+
+.rounded-lg {
+  border-radius: 0.5rem;
+}
+
+.border-2 {
+  border-width: 2px;
+}
+
+.border-solid {
+  border-style: solid;
+}
+
+.border-black {
+  --tw-border-opacity: 1;
+  border-color: rgb(0 0 0 / var(--tw-border-opacity));
+}
+
+.bg-sky-600 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(2 132 199 / var(--tw-bg-opacity));
+}
+
+.p-2 {
+  padding: 0.5rem;
+}
+
+.p-3 {
+  padding: 0.75rem;
+}
+
+.text-4xl {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+}
+
+.text-lg {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
 }
 
 .font-bold {
   font-weight: 700;
 }
 
-.underline {
-  text-decoration-line: underline;
+.font-extrabold {
+  font-weight: 800;
 }
 
-h2 {
-  font-size: 30px;
-  font-weight: 600;
+.text-white {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
-textarea {
-  resize: none;
-}
-
-nav {
-  min-height: 5vh;
-}
-
-.container {
-  display: flex;
-  flex-direction: column;
-}
-
-.content {
-  display: flex;
-  justify-content: center;
-  min-height: 95vh;
+.hover\:bg-sky-400:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(56 189 248 / var(--tw-bg-opacity));
 }
