@@ -608,6 +608,10 @@ body {
   align-items: center;
 }
 
+.justify-end {
+  justify-content: flex-end;
+}
+
 .justify-center {
   justify-content: center;
 }
@@ -622,6 +626,10 @@ body {
 
 .gap-5 {
   gap: 1.25rem;
+}
+
+.self-end {
+  align-self: flex-end;
 }
 
 .self-center {
