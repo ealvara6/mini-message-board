@@ -9,20 +9,20 @@
 <body>
     <div class="flex flex-col min-h-screen gap-3">
         <%- include('navbar', {links: links}) %>
-        <div class="flex flex-col self-center grow min-w-full md:min-w-[700px] p-3">
-            <div class="flex flex-col min-w-[800px] border-solid border-black border-2 rounded-lg">
-                <div class="flex justify-center border-solid border-black border-b-2"><span class="text-3xl font-bold p-3">Message Form</span></div>
+        <div class="flex flex-col self-center grow min-w-full md:min-w-[700px] p-3 text-white">
+            <div class="flex flex-col border-solid border-secondary-light border-2 rounded-lg">
+                <div class="flex justify-center border-solid border-secondary-light border-b-2"><span class="text-3xl font-bold p-3">Message Form</span></div>
                 <form class="flex flex-col gap-3 p-3" method="POST" action="/new">
                     <div class="flex gap-3">
                         <label class="text-xl font-bold" for="user">User:</label>
-                        <input class="border-sold border-black border-2" type="text" name="user" id="user">
+                        <input class="border-sold border-primary-dark border-2 bg-secondary-light" type="text" name="user" id="user">
                     </div>
                     <div class="flex gap-3 flex-col">
                         <label class="text-xl font-bold" for="message">Message:</label>
-                        <textarea style="resize: none;" class="border-sold border-black border-2" name="message" id="message" cols="30" rows="10"></textarea>
+                        <textarea style="resize: none;" class="border-sold border-primary-dark border-2 bg-secondary-light" name="message" id="message" cols="30" rows="10"></textarea>
                     </div>
-                    <div class="flex gap-3">
-                        <input class="grow border-solid border-black border-2 rounded-lg min-h-16 bg-sky-600 text-white hover:bg-sky-400 active:bg-sky-400" type="submit" value="Submit">
+                    <div class="flex gap-3 md:self-end md:w-48">
+                        <input class="grow bg-secondary-dark rounded-lg min-h-16 md:min-h-12 text-white cursor-pointer font-bold" type="submit" value="Submit">
                     </div>
                 </form>
             </div>

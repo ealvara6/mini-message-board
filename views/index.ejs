@@ -9,12 +9,12 @@
 <body>
     <div class="flex flex-col min-h-screen gap-3">
         <%- include('navbar', {links: links}) %>
-        <div class="flex flex-col self-center grow min-w-full p-3 md:min-w-[700px] md:p-0">
-            <div class="border-sold border-black rounded-lg border-2 p-3 flex flex-col gap-3">
+        <div class="flex flex-col self-center min-w-full p-3 md:min-w-[700px] md:p-0 text-white">
+            <div class="border-sold border-secondary-light rounded-lg border-2 p-3 flex flex-col gap-3">
                 <div class="self-center font-bold font-extrabold font text-4xl">posts</div>
                 <ul class="flex flex-col gap-5 max-w-full ">
                     <% messages.map((message) => { %>
-                        <li class="p-2 border-2 border-black border-solid rounded-lg">
+                        <li class="p-2 border-2 border-secondary-light border-solid rounded-lg">
                             <div><span class="font-bold text-lg">User: </span> <%= message.user %><br></div>
                             <div><span class="font-bold text-lg">Message: </span> <%= message.message %><br></div>
                             <div><span class="font-bold text-lg">Date Added: </span><%= message.added %><br></div>
@@ -22,7 +22,7 @@
                     <% }) %>
                 </ul>
                 <a href="/new" class="flex md:self-end">
-                    <button class="grow md:grow-0 md:min-h-12 md:w-48 min-h-16 bg-sky-600 w-fit p-2 text-white font-bold rounded-lg hover:bg-sky-400">Add new post</button>
+                    <button class="grow md:grow-0 md:min-h-12 md:w-48 min-h-16 bg-secondary-dark w-fit p-2 text-white font-bold rounded-lg">Add new post</button>
                 </a>
             </div>
         </div>
