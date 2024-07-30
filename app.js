@@ -17,13 +17,24 @@ const messages = [
     }
 ];
 
+const links = [
+    {
+        name: 'Home',
+        link: '/'
+    },
+    {
+        name: 'New Post',
+        link: '/new'
+    }
+];
+
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(assetpath));
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
 app.get('/', (req, res) => {
-    res.render('index', { messages: messages });
+    res.render('index', { messages: messages, links: links });
 });
 
 app.get('/new', (req, res) => {
