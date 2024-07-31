@@ -45,7 +45,6 @@ const addPost = (body) => {
         newEntry.emptypost = false;
     }
     newEntry.added = date.toLocaleDateString('en-US');
-    // console.log(newEntry);
 
     posts.push(newEntry);
 }
@@ -68,6 +67,7 @@ app.post('/new', (req, res) => {
 
 app.use('/post', (req, res, next) => {
     req.links = links;
+    req.posts = posts;
     next();
 }, postRouter);
 

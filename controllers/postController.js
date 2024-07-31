@@ -1,8 +1,16 @@
 const getPostForm = (req, res) => {
-    links = req.links;
-    res.render('form', { links: links});
+    const links = req.links;
+    res.render('form', { links: links });
+}
+
+const getPost = (req, res) => {
+    const links = req.links;
+    const post = req.posts.find((post) => post.id == parseInt(req.params.id));
+    console.log(post);
+    res.render('post', {links: links, post: post });
 }
 
 module.exports = {
     getPostForm,
+    getPost,
 };
