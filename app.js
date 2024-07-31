@@ -8,12 +8,14 @@ const messages = [
     {
         message: 'Hi there!',
         user: 'Amando',
-        added: date.toLocaleDateString('en-US')
+        added: date.toLocaleDateString('en-US'),
+        emptyMessage: false
     },
     {
         message: 'Hello World!',
         user: 'Charles',
-        added: date.toLocaleDateString('en-US')
+        added: date.toLocaleDateString('en-US'),
+        emptyMessage: false
     }
 ];
 
@@ -41,6 +43,14 @@ app.get('/new', (req, res) => {
     res.render('form', {links: links});
 });
 app.post('/new', (req, res) => {
+    const newEntry = req.body;
+    if(newEntry.message === '') {
+        newEntry.emptyMessage = true;
+    } else {
+        newEntry.emptyMessage = false;
+    }
+    newEntry.added = date.toLocaleDateString('en-US');
+
     messages.push(req.body);
     res.redirect('/');
 });

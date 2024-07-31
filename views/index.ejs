@@ -15,9 +15,16 @@
                 <ul class="flex flex-col gap-5 max-w-full ">
                     <% messages.map((message) => { %>
                         <li class="p-2 border-2 border-secondary-light border-solid rounded-lg">
-                            <div><span class="font-bold text-lg">User: </span> <%= message.user %><br></div>
-                            <div><span class="font-bold text-lg">Message: </span> <%= message.message %><br></div>
-                            <div><span class="font-bold text-lg">Date Added: </span><%= message.added %><br></div>
+                            <div><span class="font-bold text-lg">User: </span> <%= message.user %></div>
+                            <div>
+                                <span class="font-bold text-lg">Message: </span> 
+                                <% if(message.emptyMessage) { %>
+                                    <span class="italic">No Message Added</span>
+                                <% } else { %>
+                                   <%= message.message %> 
+                                <% } %>
+                            </div>
+                            <div><span class="font-bold text-lg">Date Added: </span><%= message.added %></div>
                         </li>
                     <% }) %>
                 </ul>
