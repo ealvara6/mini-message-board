@@ -10,3 +10,4 @@ This website is a project within the [Odin Project](https://www.theodinproject.c
 
 ## Icon Credits
 * <a href="https://www.flaticon.com/free-icons/reminder" title="reminder icons">Reminder icons created by max.icons - Flaticon</a>
+* <a href="https://www.flaticon.com/free-icons/error" title="error icons">Error icons created by Freepik - Flaticon</a>

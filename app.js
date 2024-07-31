@@ -55,4 +55,14 @@ app.post('/new', (req, res) => {
     res.redirect('/');
 });
 
+app.use((req, res, next) => {
+    res.status(404);
+    res.render('404-page', { links: links });
+});
+
+app.use((err, req, res, next) => {
+    console.log(err);
+    res.status(500).send(err);
+});
+
 app.listen(8080);

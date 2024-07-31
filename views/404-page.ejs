@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404</title>
+    <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="./css/output.css">
+</head>
+<body>
+    <div class="flex flex-col min-h-screen gap-8">
+        <%- include('navbar', links); %>
+        <div class=" flex justify-center grow items-center">
+            <div class="flex flex-col md:flex-row gap-8 h-fit items-center w-fill md:w-[800px] p-16 sm:p-0 text-center md:text-left">
+                <img class="w-96" src="./images/error.png" alt="404 icon">
+                <div class="flex flex-col gap-3 text-white text-wrap">
+                    <div class="text-3xl font-bold">Sorry, the page you were looking for was not found.</div>
+                    <a class="text-secondary-dark underline text-xl font-bold" href="/">Return Home</a>
+                </div>
+            </div>
+        </div>
+        <%- include('footer') %>
+    </div>
+</body>
+</html>
