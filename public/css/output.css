@@ -721,6 +721,10 @@ body {
   gap: 2rem;
 }
 
+.self-end {
+  align-self: flex-end;
+}
+
 .self-center {
   align-self: center;
 }
@@ -767,6 +771,11 @@ body {
 .border-secondary-light {
   --tw-border-opacity: 1;
   border-color: rgb(238 238 238 / var(--tw-border-opacity));
+}
+
+.border-secondary-dark {
+  --tw-border-opacity: 1;
+  border-color: rgb(0 173 181 / var(--tw-border-opacity));
 }
 
 .bg-primary-dark {

@@ -2,20 +2,26 @@ const express = require('express');
 const app = express();
 const path = require('path');
 const assetpath = path.join(__dirname, 'public');
-const date = new Date();
 
-const messages = [
+const postRouter = require('./routes/postRoutes');
+
+const date = new Date();
+let id = 0;
+
+const posts = [
     {
-        message: 'Hi there!',
+        id: id++,
+        post: 'Hi there!',
         user: 'Amando',
         added: date.toLocaleDateString('en-US'),
-        emptyMessage: false
+        emptypost: false
     },
     {
-        message: 'Hello World!',
+        id: id++,
+        post: 'Hello World!',
         user: 'Charles',
         added: date.toLocaleDateString('en-US'),
-        emptyMessage: false
+        emptypost: false
     }
 ];
 
@@ -26,34 +32,46 @@ const links = [
     },
     {
         name: 'New Post',
-        link: '/new'
+        link: '/post/new'
     }
 ];
+
+const addPost = (body) => {
+    const newEntry = body;
+    newEntry.id = id++;
+    if(newEntry.post === '') {
+        newEntry.emptypost = true;
+    } else {
+        newEntry.emptypost = false;
+    }
+    newEntry.added = date.toLocaleDateString('en-US');
+    // console.log(newEntry);
+
+    posts.push(newEntry);
+}
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(assetpath));
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
+
 app.get('/', (req, res) => {
-    res.render('index', { messages: messages, links: links });
+    res.render('index', { posts: posts, links: links });
 });
 
-app.get('/new', (req, res) => {
-    res.render('form', {links: links});
-});
 app.post('/new', (req, res) => {
-    const newEntry = req.body;
-    if(newEntry.message === '') {
-        newEntry.emptyMessage = true;
-    } else {
-        newEntry.emptyMessage = false;
-    }
-    newEntry.added = date.toLocaleDateString('en-US');
-
-    messages.push(req.body);
+    console.log(req.body);
+    addPost(req.body);
     res.redirect('/');
 });
+
+app.use('/post', (req, res, next) => {
+    req.links = links;
+    next();
+}, postRouter);
+
+
 
 app.use((req, res, next) => {
     res.status(404);
