@@ -8,9 +8,9 @@
     <link rel="stylesheet" href="/css/output.css">
 </head>
 <body>
-    <div class="flex flex-col min-h-screen gap-3">
+    <div class="flex flex-col min-h-screen gap-8">
         <%- include('navbar', {links: links}) %>
-        <div class="flex flex-col self-center grow min-w-full md:min-w-[700px] p-3 md:p-0 text-white justify-center">
+        <div class="flex flex-col self-center grow min-w-full md:min-w-[700px] p-6 md:p-0 text-white">
             <div class="flex flex-col border-solid border-secondary-light border-2 rounded-md">
                 <div class="flex justify-center border-solid border-secondary-light border-b-2"><span class="text-3xl font-bold p-3">Message Form</span></div>
                 <form class="flex flex-col gap-3 p-3" method="POST" action="/new">

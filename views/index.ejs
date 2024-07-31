@@ -8,25 +8,25 @@
     <link rel="stylesheet" href="./css/output.css">
 </head>
 <body>
-    <div class="flex flex-col min-h-screen gap-3">
+    <div class="flex flex-col min-h-screen gap-8">
         <%- include('navbar', {links: links}) %>
         <div class="flex grow justify-center">
             <div class="flex flex-col min-w-full p-3 md:min-w-[700px] md:p-0 text-white">
-                <div class="border-sold border-secondary-light rounded-lg border-2 p-3 flex flex-col gap-3">
+                <div class="border-sold border-secondary-light rounded-lg border-2 p-3 flex flex-col gap-8">
                     <div class="self-center font-bold font-extrabold font text-4xl">posts</div>
                     <ul class="flex flex-col gap-5 max-w-full ">
                         <% posts.map((post) => { %>
                             <li class="flex flex-col p-2 border-2 border-secondary-light border-solid rounded-lg">
-                                <div><span class="font-bold text-lg">User: </span> <%= post.user %></div>
-                                <div>
-                                    <span class="font-bold text-lg">post: </span> 
+                                <div class="text-lg"><span class="font-bold text-2xl">User: </span> <%= post.user %></div>
+                                <div class="text-lg">
+                                    <span class="font-bold text-2xl">post: </span> 
                                     <% if(post.emptypost) { %>
                                         <span class="italic">No post Added</span>
                                     <% } else { %>
                                        <%= post.post %> 
                                     <% } %>
                                 </div>
-                                <div><span class="font-bold text-lg">Date Added: </span><%= post.added %></div>
+                                <div class="text-lg"><span class="font-bold text-2xl">Date Added: </span><%= post.added %></div>
                                 <a href="/post/<%=post.id%>" class="self-end bg-secondary-dark p-2 rounded-lg font-bold">
                                     Open post
                                 </a>
