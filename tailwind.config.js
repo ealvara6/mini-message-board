@@ -10,6 +10,7 @@ module.exports = {
         'primary-light': '#393E46',
         'secondary-dark': '#00ADB5',
         'secondary-light': '#EEEEEE',
+        'invalid': '#FF0000',
       },
   },
   plugins: [],
