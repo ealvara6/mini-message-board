@@ -1,9 +1,9 @@
 const express = require('express');
 const app = express();
 const path = require('path');
-const assetpath = path.join(__dirname, 'public');
+const assetpath = path.join(__dirname, 'app/public');
 
-const postRouter = require('./routes/postRoutes');
+const postRouter = require('./app/routes/postRoutes');
 
 const date = new Date();
 let id = 0;
@@ -51,7 +51,7 @@ const addPost = (body) => {
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(assetpath));
-app.set('views', path.join(__dirname, 'views'));
+app.set('views', path.join(__dirname, 'app/views'));
 app.set('view engine', 'ejs');
 
 
