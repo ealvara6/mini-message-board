@@ -6,26 +6,6 @@ require('dotenv').config();
 
 const postRouter = require('./routes/postRoutes');
 
-const date = new Date();
-let id = 0;
-
-const posts = [
-    {
-        id: id++,
-        post: 'Hi there!',
-        user: 'Amando',
-        added: date.toLocaleDateString('en-US'),
-        emptypost: false
-    },
-    {
-        id: id++,
-        post: 'Hello World!',
-        user: 'Charles',
-        added: date.toLocaleDateString('en-US'),
-        emptypost: false
-    }
-];
-
 const links = [
     {
         name: 'Home',
@@ -56,9 +36,10 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
 
-app.get('/', (req, res) => {
-    res.render('index', { posts: posts, links: links });
-});
+app.use('/', (req, res, next) => {
+    req.links = links;
+    next();
+}, postRouter);
 
 app.post('/new', (req, res) => {
     console.log(req.body);
@@ -66,11 +47,6 @@ app.post('/new', (req, res) => {
     res.redirect('/');
 });
 
-app.use('/post', (req, res, next) => {
-    req.links = links;
-    req.posts = posts;
-    next();
-}, postRouter);
 
 
 
