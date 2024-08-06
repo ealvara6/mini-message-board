@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const path = require('path');
 const assetpath = path.join(__dirname, 'public');
+require('dotenv').config();
 
 const postRouter = require('./routes/postRoutes');
 
@@ -83,4 +84,5 @@ app.use((err, req, res, next) => {
     res.status(500).send(err);
 });
 
-app.listen(8080);
+const PORT = process.env.PORT;
+app.listen(PORT || 3000, () => { console.log(`Express app listening on port: ${PORT}`)});
