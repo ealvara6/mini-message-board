@@ -9,11 +9,12 @@ const getAllPosts = asyncHandler(async (req, res) => {
     });
 });
 
-const getPost = (req, res) => {
-    const links = req.links;
-    const post = req.posts.find((post) => post.id == parseInt(req.params.id));
-    res.render('post', {links: links, post: post });
-}
+const getPost = asyncHandler(async (req, res) => {
+    const post = await db.getPost(req.params.id);
+    console.log(post);
+    // const post = req.posts.find((post) => post.id == parseInt(req.params.id));
+    res.render('post', {links: req.links, post: post });
+});
 
 const getPostForm = (req, res) => {
     const links = req.links;

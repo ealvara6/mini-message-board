@@ -15,15 +15,15 @@
                 <div class="self-center font-extrabold text-4xl">Post</div>
                 <div class="flex gap-3 items-center">
                     <div class="font-bold text-2xl">User:</div>
-                    <div class="text-lg"><%= post.user %></div>
+                    <div class="text-lg"><%= post[0].username %></div>
                 </div>
                 <div class="flex gap-3 items-center">
                     <div class="font-bold text-2xl">Message:</div>
-                    <div class="text-lg"><%= post.post %></div>
+                    <div class="text-lg"><%= post[0].post %></div>
                 </div>
                 <div class="flex gap-3 items-center">
                     <div class="font-bold text-2xl">Date Added:</div>
-                    <div class="text-lg"><%= post.added %></div>
+                    <div class="text-lg"><%= post[0].date_added %></div>
                 </div>
                 <a class="flex md:self-end h-12 justify-center items-center bg-secondary-dark p-2 rounded-lg min-w-36" href="/">
                     <div class="text-lg font-bold">Go Back</div>
