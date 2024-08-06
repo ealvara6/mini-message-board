@@ -20,7 +20,7 @@
                                 <div class="text-lg"><span class="font-bold text-2xl">User: </span> <%= post.username %></div>
                                 <div class="text-lg">
                                     <span class="font-bold text-2xl">post: </span> 
-                                    <% if(post.emptypost) { %>
+                                    <% if(post.post === '') { %>
                                         <span class="italic">No post Added</span>
                                     <% } else { %>
                                        <%= post.post %> 

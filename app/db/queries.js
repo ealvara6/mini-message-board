@@ -21,7 +21,13 @@ const getPost = async(id) => {
     return rows;
 }
 
+const insertPost = async (username, post) => {
+    await pool.query(`INSERT INTO posts (username, post )
+        VALUES($1, $2)`, [username, post]);
+}
+
 module.exports = {
     getAllPosts,
     getPost,
+    insertPost,
 };

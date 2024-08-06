@@ -17,19 +17,6 @@ const links = [
     }
 ];
 
-const addPost = (body) => {
-    const newEntry = body;
-    newEntry.id = id++;
-    if(newEntry.post === '') {
-        newEntry.emptypost = true;
-    } else {
-        newEntry.emptypost = false;
-    }
-    newEntry.added = date.toLocaleDateString('en-US');
-
-    posts.push(newEntry);
-}
-
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(assetpath));
 app.set('views', path.join(__dirname, 'views'));
@@ -41,15 +28,6 @@ app.use('/', (req, res, next) => {
     next();
 }, postRouter);
 
-app.post('/new', (req, res) => {
-    console.log(req.body);
-    addPost(req.body);
-    res.redirect('/');
-});
-
-
-
-
 app.use((req, res, next) => {
     res.status(404);
     res.render('404-page', { links: links });
@@ -57,7 +35,7 @@ app.use((req, res, next) => {
 
 app.use((err, req, res, next) => {
     console.log(err);
-    res.status(500).send(err);
+    res.status(err.statusCode || 500).render('404-page', { links: links });
 });
 
 const PORT = process.env.PORT;
