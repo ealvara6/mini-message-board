@@ -2,8 +2,6 @@ const { Client } = require('pg');
 require('dotenv').config();
 
 const SQL = `
-DROP TABLE posts;
-
 CREATE TABLE posts (
 id INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
 username VARCHAR ( 10 ),
@@ -20,7 +18,7 @@ VALUES
 const main = async () => {
     console.log('seeding...');
     const client = new Client({
-        connectionString: `postgresql://${process.env.USER}:${process.env.PASSWORD}@${process.env.HOST}:${process.env.DB_PORT}/${process.env.DATABASE}`
+        connectionString: process.env.POSTGRES_DB
     });
     
     await client.connect();

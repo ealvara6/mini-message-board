@@ -23,7 +23,6 @@ const getPost = asyncHandler(async (req, res) => {
         throw new CustomNotFoundError('User not found');
     }
     const post = await db.getPost(id);
-    console.log(post);
     res.render('post', {links: req.links, post: post });
 });
 
